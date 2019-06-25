@@ -23,8 +23,8 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="{% static 'images/logo.svg' %}" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{% static 'images/logo-mini.svg' %}" alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="/main"><img src="{% static 'images/kb_logo.png' %}" class="mr-2" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="/main"><img src="{% static 'images/kb_logo_.png' %}" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -32,14 +32,8 @@
         </button>
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item nav-search d-none d-lg-block">
-            <div class="input-group">
-              <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
-                <span class="input-group-text" id="search">
-                  <i class="ti-search"></i>
-                </span>
-              </div>
-              <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
-            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              
           </li>
         </ul>
         <ul class="navbar-nav navbar-nav-right">
@@ -137,7 +131,7 @@
           </li>
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="{% static 'images/faces/face28.jpg' %}" alt="profile"/>
+              <i class="ti-user menu-icon"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item">
@@ -159,55 +153,50 @@
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background:white;">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
-              <i class="ti-shield menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
+            <a class="nav-link" href="/main">
+              <i class="ti-star menu-icon"></i>
+              <span class="menu-title">메인 페이지</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/total">
+              <i class="ti-layout-list-post menu-icon"></i>
+              <span class="menu-title">신청 현황</span>
+            </a> 
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/passed">
+              <i class="ti-check-box menu-icon"></i>
+              <span class="menu-title">승인 현황</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/rejected">
+              <i class="ti-pie-chart menu-icon"></i>
+              <span class="menu-title">반려 현황</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="ti-palette menu-icon"></i>
-              <span class="menu-title">UI Elements</span>
+              <i class="ti-view-list-alt menu-icon"></i>
+              <span class="menu-title">스타 뱅킹 허브</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+                <li class="nav-item"> <a class="nav-link" href="">스타뱅킹 홈</a></li>
+                <li class="nav-item"> <a class="nav-link" href="kbstar.com">KB국민은행</a></li>
+                <li class="nav-item"> <a class="nav-link" href="kbfg.com">KB금융그룹</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/forms/basic_elements.html">
-              <i class="ti-layout-list-post menu-icon"></i>
-              <span class="menu-title">Form elements</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
-              <i class="ti-pie-chart menu-icon"></i>
-              <span class="menu-title">Charts</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/tables/basic-table.html">
-              <i class="ti-view-list-alt menu-icon"></i>
-              <span class="menu-title">Tables</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/icons/themify.html">
-              <i class="ti-star menu-icon"></i>
-              <span class="menu-title">Icons</span>
-            </a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <i class="ti-user menu-icon"></i>
-              <span class="menu-title">User Pages</span>
+              <span class="menu-title">관리자 옵션</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="auth">
@@ -223,7 +212,7 @@
           <li class="nav-item">
             <a class="nav-link" href="documentation/documentation.html">
               <i class="ti-write menu-icon"></i>
-              <span class="menu-title">Documentation</span>
+              <span class="menu-title">서류 양식 저장소</span>
             </a>
           </li>
         </ul>
@@ -250,9 +239,9 @@
                           <th>심사결과</th>
                           <th>이자율</th>
                           <th>등급코드</th>
-                          <th>계약 일자</th>
+                          <th>계약일자</th>
                           <th>신청사유</th>
-                          <th>상태</th>
+                          <th>최종상태</th>
                         </tr>
                       </thead>
                       {% for i in total_table %}

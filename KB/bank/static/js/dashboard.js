@@ -95,16 +95,21 @@
       var SalesChart = new Chart(SalesChartCanvas, {
         type: 'bar',
         data: {
-          labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+          labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
           datasets: [{
-              label: 'Offline Sales',
-              data: [480, 230, 470, 210, 330],
-              backgroundColor: '#8EB0FF'
+              label: '신청 현황',
+              data: [480, 230, 470, 210, 330, 500], 
+              backgroundColor: '#316FFF'
             },
             {
-              label: 'Online Sales',
-              data: [400, 340, 550, 480, 170],
-              backgroundColor: '#316FFF'
+              label: '승인 현황',
+              data: [400, 340, 550, 480, 170, 400],
+              backgroundColor: 'rgba(255, 193, 2, .8)'
+            },
+            {
+              label: '반려 현황',
+              data: [400, 340, 550, 480, 170, 100],
+              backgroundColor: '#8EB0FF'
             }
           ]
         },
