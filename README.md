@@ -2,4 +2,4 @@
 
 # so it begins...
 
-# main.html / dashboard.js / sales-chart
+# 6/28/2019 ~ 6/30/2019
