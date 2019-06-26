@@ -3,9 +3,10 @@ from django.urls import path, include
 from bank import views
 
 urlpatterns = [
-    path('main/', views.main),
+    path('main/', views.main, name='main'),
     path('index/', views.index),
-    path('passed/', views.passed),
-    path('rejected/', views.rejected),
-    path('total/', views.total),
+    path('passed/', views.passed, name='passed'),
+    path('rejected/', views.rejected, name='rejected'),
+    path('total/', views.total, name='total'),
+    path('login/', views.login, name='login'),
 ]

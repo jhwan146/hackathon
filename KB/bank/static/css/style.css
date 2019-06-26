@@ -20478,8 +20478,10 @@ dl li {
 /* === Landing screens === */
 /* Auth */
 .auth .login-half-bg {
-  background: url("../images/auth/login-bg.jpg");
-  background-size: cover;
+  background: url("../images/auth/kb_slogan.png");
+  background-size: 550px 450px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .auth .register-half-bg {

@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bank',
+    'bank.apps.BankConfig',
     'bootstrap4',
 ]
 
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'KB.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'bank','templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,6 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse,request, JsonResponse
 from .models import *
+
+
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib import auth
+from django.contrib.auth.models import User
 
 # reuse table
 total_table = Member.objects.all()
@@ -14,6 +19,19 @@ def main(request):
         'true_num' : len(true_table), ##승인
         'false_num' : len(false_table) ##거절 
         })
+
+def login(request):
+    if request.method == 'POST':
+        admin_id = request.POST['admin_id']
+        admin_password = request.POST['admin_password']
+        user = auth.authenticate(request, admin_id=admin_id, admin_password=admin_password)
+        if user is not None:
+            auth.login(request, user)
+            return redirect('/main')     
+        else:
+            return render(request, 'bank/login.html', {'error' : 'check your id and password again'})
+    else:
+        return render(request, 'bank/login.html')
 
 def index(request):
     #..
@@ -31,6 +49,6 @@ def rejected(request):
         })
 
 def total(request):
-    return render(request, 'bank/total.html', {#전체
+    return render(request, 'bank/total.html', { #전체
         'total_table' :  total_table
         })
