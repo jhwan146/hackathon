@@ -52,3 +52,7 @@ def total(request):
     return render(request, 'bank/total.html', { #전체
         'total_table' :  total_table
         })
+
+def scan(request):
+    return render(request, 'bank/scan.html', {})
+

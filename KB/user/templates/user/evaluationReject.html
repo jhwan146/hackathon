@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="{% static 'css/loading.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500&display=swap" rel="stylesheet">        
+        <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
+        <title>StarBank evaluationReject</title>
+    </head>
+    <body>
+        <div class="topMenu">
+            <img src="{% static 'images/KB.png' %}" alt="KBlogo" id="KBlogo" style="margin-left: 11px; margin-bottom:-9px;">
+            <span style="font-family: 'Jua', sans-serif; color: #ffbc00;">별 빚이 내린다</span>
+            <img src="{% static 'images/falling-star.png' %}" alt="">
+            <hr>
+            <h4 id="tMh4">금리인하요구권</h4>
+            <table id="tMtable">
+                <tr id="tMtr">
+                    <td style="font-weight:bold;">"고객님 죄송합니다, <br>고객님의 대출상품은 인하적용 상품이 아닙니다."</td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <h4 id="tMh4" style="font-weight: 500;">신청가능대출</h4>
+            <ul id="tmul">
+                <p style="margin-top: -13px;">신용대출, 부동산담보대출, 전세자금대출<br>
+                단, 아래의 대출은 신청이 불가합니다.</p>
+                <li>외부 기간과의 협약에 의한 대출</li>
+                <li>예(적금), 청약, 펀드, 신탁 등 담보대출</li>
+                <li>신용등급에 의해 금리차이가 발생하지 않는 대출</li>
+                <li>별도의 승인조건이 적용되어 있는 대출</li>
+                <li>기타 은행 내규 등에 의해 대출취급이 제한된 고객이 보유한 대출</li>
+            </ul>
+        </div>
+        <div class="house" style="margin-top: 168px; text-align:center;">
+            <hr>
+            <img src="{% static 'images/house.png' %}" alt="house" style="margin-bottom: -8px;"><br>
+            <span style="font-size: 13px; font-weight:bold;">홈으로</span>
+        </div>
+    </body>
+
+    <script src="{% static 'js/evaluationReject.js' %}"></script>
+
+</html>

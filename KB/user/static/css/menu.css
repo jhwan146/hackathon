@@ -1,0 +1,73 @@
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+#Menu ul{
+    float: left;
+    margin-top: -15px;
+    margin-left: -53px;
+    margin-right: 11px;
+    text-align: center;
+    width: 80px;
+    height: 100%;
+    font-size: 11px; 
+    background-color: #e2f2ff;
+}
+
+li{
+    list-style-type: none;
+    padding-top: 38px;
+}
+
+img{
+    width: 18px;
+}
+
+.Serch td{
+    font-size: 11px; 
+    text-align: left;
+    width: 260px;
+    height: 30px;
+}
+
+.Step {
+    font-size: 13px;
+    font-weight: 500;
+}
+.Step2 {
+    font-size: 13px;
+    font-weight: 500;
+}
+.Step3 {
+    font-size: 13px;
+    font-weight: 500;
+}
+.Step table .Step2{
+    border: 1px solid #e2f2ff;
+    border-collapse: collapse;
+}
+
+.Step td:hover{
+    background-color: yellow;    
+}
+
+.Step th, td{
+    border: 1px solid #e2f2ff;
+    text-align: center;
+    font-size: 13px;
+    height: 40px;
+    width: 87px;
+}
+.Step3 td{
+    color: darkgray;
+    text-align: left;
+    width: 300px;
+}
+
+.Step2 td:hover{
+    background-color: yellow;  
+}
+
+.Step3 td:hover{
+    background-color: yellow;  
+}

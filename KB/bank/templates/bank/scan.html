@@ -159,104 +159,86 @@
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background:white;">
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="/bank/main">
-              <i class="ti-star menu-icon"></i>
-              <span class="menu-title">메인 페이지</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/bank/total">
-              <i class="ti-layout-list-post menu-icon"></i>
-              <span class="menu-title">신청 현황</span>
-            </a> 
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/bank/passed">
-              <i class="ti-check-box menu-icon"></i>
-              <span class="menu-title">승인 현황</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/bank/rejected">
-              <i class="ti-pie-chart menu-icon"></i>
-              <span class="menu-title">반려 현황</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="ti-view-list-alt menu-icon"></i>
-              <span class="menu-title">스타 뱅킹 허브</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">스타뱅킹 홈</a></li>
-                <li class="nav-item"> <a class="nav-link" href="kbstar.com">KB국민은행</a></li>
-                <li class="nav-item"> <a class="nav-link" href="kbfg.com">KB금융그룹</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="ti-user menu-icon"></i>
-              <span class="menu-title">관리자 옵션</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/bank/login"> 로그인</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> 설정 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> 연락망 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/lock-screen.html"> Lockscreen </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="documentation/documentation.html">
-              <i class="ti-write menu-icon"></i>
-              <span class="menu-title">서류 양식 저장소</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+      
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          
+          
+              
+        
+        
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Transaction Overview</h4>
+                  <p class="card-description">
+                    <code></code>
+                  </p>
+                  <div class="table-responsive">
+                      <div class="row align-items-center">
+                        <div class="col-md-3">Transaction hash
+                            <i class="ti-info-alt menu-icon"></i> 
+                        </div>  
+                        <div class="col-md-9">0x998c2e6192d1e728efb15576348e829ecf84dac174fad4721717ba6c3970d00c</div>
+                      </div>
+                      <hr class="hr-space">
+                      <div class="row align-items-center">
+                            <div class="col-md-3">transaction hash</div>
+                            <div class="col-md-9">0x998c2e6192d1e728efb15576348e829ecf84dac174fad4721717ba6c3970d00c</div>
+                      </div>
+                      <hr class="hr-space">
+                      <div class="row align-items-center">
+                            <div class="col-md-3">transaction hash</div>
+                            <div class="col-md-9">0x998c2e6192d1e728efb15576348e829ecf84dac174fad4721717ba6c3970d00c</div>
+                      </div>
+                      <hr class="hr-space">
+                      <div class="row align-items-center">
+                            <div class="col-md-3">transaction hash</div>
+                            <div class="col-md-9">0x998c2e6192d1e728efb15576348e829ecf84dac174fad4721717ba6c3970d00c</div>
+                      </div>
 
-      {% block container %}
-      {% endblock %}
 
-        <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2018 <a href="https://www.templatewatch.com/" target="_blank">Templatewatch</a>. All rights reserved.</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
+                  </div>
+                </div>
+              </div>
             </div>
-          </footer>
-          <!-- partial -->
+            
+          
+            
+    
         </div>
-        <!-- main-panel ends -->
-      </div>
-      <!-- page-body-wrapper ends -->
+        <!-- content-wrapper ends -->
+<!-- partial:partials/_footer.html -->
+ <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+          <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2018 <a href="https://www.templatewatch.com/" target="_blank">Templatewatch</a>. All rights reserved.</span>
+          <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
+        </div>
+      </footer>
+      <!-- partial -->
     </div>
-    <!-- container-scroller -->
-  
-    <!-- plugins:js -->
-    <script src="{% static 'vendors/base/vendor.bundle.base.js' %}"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page-->
-    <script src="{% static 'vendors/chart.js/Chart.min.js' %}"></script>
-    <!-- End plugin js for this page-->
-    <!-- inject:js -->
-    <script src="{% static 'js/off-canvas.js' %}"></script>
-    <script src="{% static 'js/hoverable-collapse.js' %}"></script>
-    <script src="{% static 'js/template.js' %}"></script>
-    <script src="{% static 'js/todolist.js' %}"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <script src="{% static 'js/dashboard.js' %}"></script>
-    <!-- End custom js for this page-->
-  </body>
-  
-  </html>
-  
+    <!-- main-panel ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+
+<!-- plugins:js -->
+<script src="{% static 'vendors/base/vendor.bundle.base.js' %}"></script>
+<!-- endinject -->
+<!-- Plugin js for this page-->
+<script src="{% static 'vendors/chart.js/Chart.min.js' %}"></script>
+<!-- End plugin js for this page-->
+<!-- inject:js -->
+<script src="{% static 'js/off-canvas.js' %}"></script>
+<script src="{% static 'js/hoverable-collapse.js' %}"></script>
+<script src="{% static 'js/template.js' %}"></script>
+<script src="{% static 'js/todolist.js' %}"></script>
+<!-- endinject -->
+<!-- Custom js for this page-->
+<script src="{% static 'js/dashboard.js' %}"></script>
+<!-- End custom js for this page-->
+</body>
+
+</html>

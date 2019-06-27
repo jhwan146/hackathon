@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500&display=swap" rel="stylesheet">        
+        <title>StarBank Login</title>
+    </head>
+    <body>
+        <div class="menuImg">
+            <img src="{% static 'images/cash.png' %}" alt="account"></img>
+            <img src="{% static 'images/search.png' %}" alt="search" id="serch"></img>
+            <img src="{% static 'images/menu.png' %}" alt="menu"></img>
+        </div>
+        <div class="menuName">
+            <span>계좌뷰</span>
+            <img src="{% static 'images/KB.png' %}" alt="KBlogo" id="KBlogo">
+            <span>검색</span>
+            <span style="margin-left: 5px;">전체메뉴</span>
+        </div>
+        <div class="idTitle">
+            <h2>아이디 로그인</h2>
+        </div>
+        <div class="IDPW">
+            <form action="">
+                <div id="ID">
+                    <span>아이디(ID)</span>
+                    <input type="text" placeholder="영문,숫자,영문/숫자6~12자">
+                </div>
+                <div id="PW">
+                    <span>사용자 암호</span>
+                    <input type="password" placeholder="숫자,영문/숫자6~12자">
+                </div>
+            </form>
+        </div>
+        <div class="loginButton">
+            <button>로그인</button>
+        </div>
+        <div class="bottomMenu">
+            <span style="margin-left: 60px;">회원가입</span>
+            <span>ID조회/암호재설정</span>
+            <span>인증센터</span>
+        </div>
+        <div class="banner">
+            <img src="{% static 'images/banner.png' %}" alt="banner">
+        </div>
+    </body>
+</html>

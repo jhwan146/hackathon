@@ -25,7 +25,7 @@ SECRET_KEY = '@vgfu&(hm+&-qfom9d8$0!gyed*ry54sjjw#b9o-yhj_)-8)xd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bank.apps.BankConfig',
+    'user',
     'bootstrap4',
 ]
 
