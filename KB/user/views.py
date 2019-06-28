@@ -17,4 +17,14 @@ def loading(request):
 def menu(request):
     return render(request, 'user/menu.html', {})
     
+def loading2(request):
+    return render(request, 'user/loading2.html', {})
 
+def success(request):
+    return render(request, 'user/success.html', {})
+
+def requestForm(request):
+    return render(request, 'user/requestForm.html', {})
+
+def agree(request):
+    return render(request, 'user/agree.html', {})

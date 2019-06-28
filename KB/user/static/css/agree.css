@@ -1,0 +1,64 @@
+.topMenu span{
+    font-family: 'Jua', sans-serif; 
+    color: #ffbc00;
+}
+
+.agreeBox_1{
+    font-weight: bold;
+    font-size: 12px;
+    border: 1px solid #cbcbcb;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    width: 300px;
+    height: 178px;
+}
+
+.agreeBox_1 form{
+    text-align: left;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+
+input[type="checkbox"] + label span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #0081fc;
+    border-radius: 3px;
+    margin: 10px;
+}
+
+input[type="checkbox"]:checked + label span{
+    background: #cbcbcb;
+}
+
+.agreeBox_1 h5{
+    margin: 0px;
+    margin-left: 43px;
+    margin-top: -14px;
+    color: #512772;
+}
+
+.agreeBox_1 h3{
+    margin: 0px;
+    margin-left: 43px;
+    margin-top: -36px;
+}
+.agreeBox_1 h4{
+    margin: 0px;
+    margin-left: 43px;
+    margin-top: -36px;
+}
+
+.sign button{
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 18px;
+    margin-left: 129px;
+    background-color: #fede13;
+    border: aliceblue;
+}

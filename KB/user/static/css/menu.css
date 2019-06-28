@@ -48,7 +48,7 @@ img{
 }
 
 .Step td:hover{
-    background-color: yellow;    
+    background-color: #ffbc00;    
 }
 
 .Step th, td{
@@ -65,9 +65,9 @@ img{
 }
 
 .Step2 td:hover{
-    background-color: yellow;  
+    background-color: #ffbc00;  
 }
 
 .Step3 td:hover{
-    background-color: yellow;  
+    background-color: #ffbc00;  
 }
