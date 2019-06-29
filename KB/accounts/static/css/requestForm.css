@@ -1,0 +1,16 @@
+.selectBox table{
+    margin: auto;
+    width: 300px;
+    height: 250px;
+    text-align: left;
+}
+
+.selectBox td{
+    border: 1px solid #cbcbcb;
+    padding-left: 13px;
+}
+
+.selectBox td:hover{
+    background: #ffbc00;
+}
+

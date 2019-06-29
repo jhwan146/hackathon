@@ -25,21 +25,25 @@
         <div class="idTitle">
             <h2>아이디 로그인</h2>
         </div>
+        {% if user.user == user %}
         <div class="IDPW">
-            <form action="">
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
                 <div id="ID">
                     <span>아이디(ID)</span>
-                    <input type="text" placeholder="영문,숫자,영문/숫자6~12자">
+                    <input type="text" name="username" placeholder="영문,숫자,영문/숫자6~12자">
                 </div>
                 <div id="PW">
                     <span>사용자 암호</span>
-                    <input type="password" placeholder="숫자,영문/숫자6~12자">
+                    <input type="password" name="password" placeholder="숫자,영문/숫자6~12자">
+                </div>
+                <div class="loginButton">
+                    <button type="submit">로그인</button>
                 </div>
             </form>
         </div>
-        <div class="loginButton">
-            <button>로그인</button>
-        </div>
+        {% endif %}
+     
         <div class="bottomMenu">
             <span style="margin-left: 60px;">회원가입</span>
             <span>ID조회/암호재설정</span>

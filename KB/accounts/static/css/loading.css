@@ -1,0 +1,74 @@
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+#tMh4{
+    margin-left: 117px;
+    letter-spacing: 1px;
+    font-size: 19px;
+    color: #0e75d6;
+}
+
+#tMtable{
+    width: 359px;
+    border: 2px solid #cedfe6;
+    font-size: 13px;
+    background: #f8fdff;
+    border-radius: 7px;
+}
+
+#tmul {
+    font-size: 13px;
+    margin-top: 8px;
+    list-style-type: none;
+}
+#tmul li{
+    margin-bottom: 8px;
+    margin-left: -22px;
+}
+
+ul li::before {
+    content: "\2022";
+    color: #9e9e9e;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+  }
+#tMtable td{
+    padding: 10px;
+    text-align: center;
+}
+#KBlogo{
+    width: 133px;
+    margin-left: 109px;
+    margin-right: 46px;
+}
+
+#loading {
+    width: 100%;  
+    height: 100%;  
+    top: 0px;
+    left: 0px;
+    position: fixed;  
+    display: block;  
+    z-index: 99;  
+    text-align: center; 
+} 
+  
+#loading-image {  
+    position: absolute;  
+    top: 43%;  
+    left: 40%; 
+    z-index: 100; 
+}
+
+.BottomMenu h4{
+    position: absolute;
+    top: 58%;
+    text-align: center;
+    font-size: 15px;
+    left: 15%;;
+    color: #ffbc00;
+}
+
+

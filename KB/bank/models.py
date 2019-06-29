@@ -12,16 +12,6 @@ class Member(models.Model):
     screening=models.CharField(max_length=100)
     int_rate=models.CharField(max_length=100)
     grade=models.CharField(max_length=100)
-    signed_date=models.DateTimeField()
+    signed_date=models.CharField(max_length=100)
     reason=models.CharField(max_length=100)
     status=models.CharField(max_length=100)
-
-class Admin(models.Model):
-
-    admin_id=models.CharField(max_length=100,primary_key=True)
-    admin_name=models.CharField(max_length=100)
-    admin_password=models.CharField(max_length=100)
-    admin_mobile=models.CharField(max_length=100)
-    admin_email=models.CharField(max_length=100)
-    admin_org=models.CharField(max_length=100) # Organization of member
-    create_date = models.DateTimeField(auto_now_add=True)
