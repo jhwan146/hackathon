@@ -16,7 +16,7 @@
     <body>
         <div class="topMenu">
             <img src="{% static 'images/KB.png' %}" alt="KBlogo" id="KBlogo" style="margin-left: 11px; margin-bottom:-9px;">
-            <span>별 빚이 내린다</span>
+            <span style="font-family: 'Jua', sans-serif; color: #ffbc00;">별 빚이 내린다</span>
             <img src="{% static 'images/falling-star.png' %}" alt="">
             <hr>
             <h4 id="tMh4" style="margin-left: 58px;">STEP 02 금리인하신청사유</h4>
@@ -33,19 +33,19 @@
             </span> 
             <table>
                 <tr>
-                    <td>01. 직장의 변동</td>
+                    <td onclick="nextpage1()">01. 직장의 변동</td>
                 </tr>
                 <tr>
-                    <td>02. 연소득의 변동</td>
+                    <td onclick="nextpage2()">02. 연소득의 변동</td>
                 </tr>
                 <tr>
-                    <td>03. 직위변동</td>
+                    <td onclick="nextpage3()">03. 직위변동</td>
                 </tr>
                 <tr>
-                    <td>04. 거래실적의 변동</td>
+                    <td onclick="nextpage4()">04. 거래실적의 변동</td>
                 </tr>
                 <tr>
-                    <td>05. 기타(ex.부채감소)</td>
+                    <td onclick="nextpage5()">05. 기타(ex.부채감소)</td>
                 </tr>
             </table>
         </div>
@@ -56,5 +56,22 @@
         </div>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="{% static 'js/agree.js' %}"></script>
+        <script>
+            function nextpage1(){
+                location.replace('./../success/1');
+            }
+            function nextpage2(){
+                location.replace('./../success/2');
+            }
+            function nextpage3(){
+                location.replace('./../success/3');
+            }
+            function nextpage4(){
+                location.replace('./../success/4');
+            }
+            function nextpage5(){
+                location.replace('./../success/5');
+            }
+        </script>
     </body>
 </html>

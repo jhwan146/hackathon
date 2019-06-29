@@ -1,5 +1,6 @@
-const all = document.querySelector('#all'), signBtn = document.querySelector('.signBtn');
-
+const all = document.querySelector('#all'), 
+signBtn = document.querySelector('.signBtn'),
+myModal = document.querySelector('#myModal');
 
 function allCheck(event){
     console.log(event.target);
@@ -10,9 +11,10 @@ function allCheck(event){
     }
 }
 
+
 function sign(event){
     if ( $('input:checkbox[name="else"]:checked').length == 3){
-        prompt("비밀번호를 입력해주세요")
+        location.replace("./../requestForm/")
     } else {
         alert("모든 약관에 동의해주세요.")
     }

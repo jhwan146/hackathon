@@ -37,7 +37,23 @@
                           <th>최종상태</th>
                         </tr>
                       </thead>
-                      {% for i in total_table %}
+                      {% for i in true_table %}
+                      <tbody id="myTable">
+                        <tr>
+                          <td>{{ i.customer_id }}</td>
+                          <td>{{ i.name }}</td>
+                          <td>{{ i.product }}</td>
+                          <td>{{ i.product_num }}</td>
+                          <td>{{ i.account_num }}</td>
+                          <td>{{ i.screening }}</td>
+                          <td class="text-danger">{{ i.int_rate }}</td>
+                          <td>{{ i.grade }}</td>
+                          <td>{{ i.signed_date }}</td>
+                          <td>{{ i.reason }}</td>
+                          <td><label class="badge badge-primary">{{ i.status }}</label></td>
+                        </tr>
+                      </tbody>
+                      {% endfor %}{% for i in total_false %}
                       <tbody id="myTable">
                         <tr>
                           <td>{{ i.customer_id }}</td>

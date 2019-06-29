@@ -3,7 +3,7 @@ const Step1 = document.querySelector(".Step"), Step2 = document.querySelector(".
 
 function NextPage(event){
     console.log(event.target);
-    location.replace("./loading.html");
+    location.replace("./../loading/");
 }
 
 function insertTable(event) {

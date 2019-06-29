@@ -7,11 +7,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="{% static 'css/loading.css' %}">
-        <link rel="stylesheet" href="{% static 'css/success.css' %}">
+        <link rel="stylesheet" href="{% static 'css/finish.css' %}">
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500&display=swap" rel="stylesheet">        
         <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
-        <title>StarBank Success</title>
+        <title>StarBank Finish</title>
     </head>
     <body>
         <div class="topMenu">
@@ -21,45 +21,42 @@
             <hr>
         </div>
         <div class="head1">
-            <img src="{% static 'images/discount.png' %}" alt="" style="width: 70px; display:block; margin:auto;">
-            <h4 id="tMh4" style="margin-left: 90px; color: #ffbc00;"> 금리가 인하되었습니다.</h4>
+            <img src="{% static 'images/checked2.png' %}" alt="" style="width: 70px; display:block; margin:auto;">
+            <h4 id="tMh4" style="margin-top: 9px; margin-left: 68px; color: #ffbc00;"> 금리인하가 적용되었습니다.</h4>
         </div>
-        <div class="successTable">
-            <table id="successAccount">
+        <div class="finishTable">
+            <table id="finishAccount">
+                <tr>
+                    <td>대출상품</td>
+                    <td style="text-align: right;">KB주택구입자금대출</td>
+                </tr>
                 <tr>
                     <td>적용계좌</td>
                     <td style="text-align: right;">110-123-456789&nbsp&nbsp</td>
                 </tr>
             </table>
-            <table id="successInterest">
+            <table id="finishInfo">
                 <tr id="sI1">
-                    <td>기존금리</td>
-                    <td>변경금리</td>
+                    <td>대출금리</td>
+                    <td style="color: #ffbc00; font-weight:bold;">4.023%</td>
                 </tr>
-                <tr id="sI2">
-                    <td>{{pre_rate}}%</td>
-                    <td>{{cut_rate}}%</td>
+                <tr id="sI1">
+                    <td>대출잔액</td>
+                    <td>2000만원</td>
+                </tr>
+                <tr id="sI1">
+                    <td style="padding-bottom: 10px;">만기일자</td>
+                    <td style="padding-bottom: 10px;">2020.02.22</td>
                 </tr>
             </table>
         </div>
-        <div class="successText">
-            <h4>인하된 금리를 적용하시고 싶다면,<br>하단의 적용 버튼을 눌러주세요.</h4>
+        <div class="head1">
+            <h4 id="tMh4" style="margin-top: 15px; margin-left: 68px; color: #ffbc00;"> 이용해주셔서 감사합니다.</h4>
         </div>
-        <div id="rightImg">
-            <img src="{% static 'images/right-arrow.png' %}" alt="">
-        </div>
-        <div class="accept">
-            <button class="acceptBtn" onclick="finishPage()" >금리인하적용</button>
-        </div>
-        <div class="house" style="margin-top: 76px; text-align:center;">
+        <div class="house" style="margin-top: 40px; text-align:center;">
             <hr>
             <img src="{% static 'images/house.png' %}" alt="house" style="margin-bottom: -8px;"><br>
             <span style="font-size: 13px; font-weight:bold;">홈으로</span>
         </div>
-        <script>
-            function finishPage(){
-                location.replace('./../finish/{{tx}}')
-            };
-        </script>
     </body>
 </html>

@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="requestBtn">
-            <button>금리인하신청</button>
+            <button class="Btn">금리인하신청</button>
         </div>
         <div class="requestWarning">
             <h4>금리인하신청 유의사항</h4>
@@ -75,6 +75,18 @@
                     $(".WarningText").slideToggle("slow");
                 });
             });
+
+            const btn = document.querySelector(".Btn");
+
+            function agreePage(evnet){
+                location.replace("./../agree/");
+            }
+
+            function init(){
+                btn.addEventListener("click", agreePage);
+            }
+
+            init();
         </script>
 
     </body>

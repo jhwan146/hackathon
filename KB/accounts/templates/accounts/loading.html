@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500&display=swap" rel="stylesheet">        
         <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
-        <title>StarBank Loding</title>
+        <title>StarBank Loading</title>
     </head>
     <body>
         <div class="topMenu">
@@ -23,7 +23,8 @@
                 <tr id="tMtr">
                     <td>"신용이 좋아진 만큼 금리부담은 가볍게, <br>금리인하요구권!"</td>
                 </tr>
-            </table>
+            </table> 
+            {% comment %} KB주택구입자금대출 {% endcomment %}
         </div>
         <div id="loading">
             <img src="{% static 'images/757.gif' %}" id="loading-image" alt="Loading">
@@ -31,5 +32,18 @@
         <div class="BottomMenu">
             <h4>"고객님의 상품이 적합한지 확인 중입니다. <br>잠시만 기다려주세요."</h4>
         </div>
+        <input type="hidden" id="cst_prd" name="product" value="{{customer_product}}">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script>
+            var prd = $('#cst_prd').val();
+            setTimeout(function() {
+                if(prd == "kb_interest_for_house")
+                    location.replace('../evaluation');
+                else
+                    location.replace('../evaluationReject');
+            }, 3000);
+
+        </script>
+        
     </body>
 </html>

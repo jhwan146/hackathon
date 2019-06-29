@@ -2,7 +2,7 @@ const house = document.querySelector(".house");
 
 function menuPage(event){
     console.log(event.target);
-    location.replace("./menu.html")
+    location.replace("../menu")
 }
 
 

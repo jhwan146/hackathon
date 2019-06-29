@@ -1,0 +1,226 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="{% static 'css/KBscan.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500&display=swap" rel="stylesheet">        
+        <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
+        <title>StarBank BlockScan</title>
+        
+    </head>
+    <body>
+        <div class="topBanner">
+        </div>
+        <div class="topBanner2">
+            <div class="topB2_inner">
+                <div class="topB2_inner2">
+                    <h2>KB_STAR SCAN</h2>
+                    <h5>ToyStory4 Fresh Sandwich</h5>
+                </div>
+            </div>
+        </div>
+        <div class="row-card">
+            <div class="col-card1">
+                <div class="card-height">
+                    <hr>
+                    <div style="padding: 15px;">
+                        <img src="{% static 'images/api.png' %}" style="width: 50px; float: left;" alt="">
+                        <div class="card-body">기관별 API 요청 건수.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-card1_1">
+                <div class="card-height">
+                    <div class="card-body">
+                        <hr>
+                        <svg class="chart"></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-card2">
+            <div class="col-card2">
+                    <img src="{% static 'images/hospital.png' %}" style="float: left; padding: 3px; margin-left: 10px; width:37px;" alt=""> 
+                    <div style="float: left; padding: 11px;">건강보험공단</div>
+            </div>
+            <div class="col-card2_1">
+                    <img src="{% static 'images/city.png' %}" style="float: left; padding: 3px; margin-left: 10px; width:37px;" alt=""> 
+                    <div style="float: left; padding: 11px;">정부24</div>
+            </div>
+        </div>
+        <div class="row-card3">
+            <div class="col-table1" style="float:left;">
+                <table class="col-card3">
+                    <tr>
+                        <td><img src="{% static 'images/block.png' %}" style="width:45px;" alt=""></td>
+                        <td>BlockNumber</td>
+                        <td>Hash</td>
+                        <td></td>
+                        <td>time</td>
+                    </tr>
+                </table>
+                <table class="col-card3">
+                    <tr>
+                        <td><img src="{% static 'images/folder.png' %}" style="width:45px;" alt=""></td>
+                        <td>BlockNumber</td>
+                        <td>Hash</td>
+                        <td></td>
+                        <td>time</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-table2" style="float:right;">
+                <table  class="col-card3">
+                    <tr>
+                        <td><img src="{% static 'images/block.png' %}" style="width:45px;" alt=""></td>
+                        <td>BlockNumber</td>
+                        <td>Hash</td>
+                        <td></td>
+                        <td>time</td>
+                    </tr>
+                </table>
+                <table  class="col-card3">
+                    <tr>
+                        <td><img src="{% static 'images/folder.png' %}" style="width:45px;" alt=""></td>
+                        <td>BlockNumber</td>
+                        <td>Hash</td>
+                        <td></td>
+                        <td>time</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script>
+        var data = {
+            labels: [
+                '신청사유'
+            ],
+            series: [
+                {
+                label: '이직/취직',
+                values: [4]
+                },
+                {
+                label: '소득',
+                values: [12]
+                },
+                {
+                label: '승진',
+                values: [31]
+                },]
+            };
+
+        var chartWidth       = 230,
+            barHeight        = 20,
+            groupHeight      = barHeight * data.series.length,
+            gapBetweenGroups = 10,
+            spaceForLabels   = 150,
+            spaceForLegend   = 150;
+
+        // Zip the series data together (first values, second values, etc.)
+        var zippedData = [];
+        for (var i=0; i<data.labels.length; i++) {
+        for (var j=0; j<data.series.length; j++) {
+            zippedData.push(data.series[j].values[i]);
+        }
+        }
+
+        // Color scale
+        var color = d3.scale.category20();
+        var chartHeight = barHeight * zippedData.length + gapBetweenGroups * data.labels.length;
+
+        var x = d3.scale.linear()
+            .domain([0, d3.max(zippedData)])
+            .range([0, chartWidth]);
+
+        var y = d3.scale.linear()
+            .range([chartHeight + gapBetweenGroups, 0]);
+
+        var yAxis = d3.svg.axis()
+            .scale(y)
+            .tickFormat('')
+            .tickSize(0)
+            .orient("left");
+
+        // Specify the chart area and dimensions
+        var chart = d3.select(".chart")
+            .attr("width", spaceForLabels + chartWidth + spaceForLegend)
+            .attr("height", chartHeight);
+
+        // Create bars
+        var bar = chart.selectAll("g")
+            .data(zippedData)
+            .enter().append("g")
+            .attr("transform", function(d, i) {
+            return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/data.series.length))) + ")";
+            });
+
+        // Create rectangles of the correct width
+        bar.append("rect")
+            .attr("fill", function(d,i) { return color(i % data.series.length); })
+            .attr("class", "bar")
+            .attr("width", x)
+            .attr("height", barHeight - 1);
+
+        // Add text label in bar
+        bar.append("text")
+            .attr("x", function(d) { return x(d) - 3; })
+            .attr("y", barHeight / 2)
+            .attr("fill", "red")
+            .attr("dy", ".35em")
+            .text(function(d) { return d; });
+
+        // Draw labels
+        bar.append("text")
+            .attr("class", "label")
+            .attr("x", function(d) { return - 10; })
+            .attr("y", groupHeight / 2)
+            .attr("dy", ".35em")
+            .text(function(d,i) {
+            if (i % data.series.length === 0)
+                return data.labels[Math.floor(i/data.series.length)];
+            else
+                return ""});
+
+        chart.append("g")
+            .attr("class", "y axis")
+            .attr("transform", "translate(" + spaceForLabels + ", " + -gapBetweenGroups/2 + ")")
+            .call(yAxis);
+
+        // Draw legend
+        var legendRectSize = 18,
+            legendSpacing  = 4;
+
+        var legend = chart.selectAll('.legend')
+            .data(data.series)
+            .enter()
+            .append('g')
+            .attr('transform', function (d, i) {
+                var height = legendRectSize + legendSpacing;
+                var offset = -gapBetweenGroups/2;
+                var horz = spaceForLabels + chartWidth + 40 - legendRectSize;
+                var vert = i * height - offset;
+                return 'translate(' + horz + ',' + vert + ')';
+            });
+
+        legend.append('rect')
+            .attr('width', legendRectSize)
+            .attr('height', legendRectSize)
+            .style('fill', function (d, i) { return color(i); })
+            .style('stroke', function (d, i) { return color(i); });
+
+        legend.append('text')
+            .attr('class', 'legend')
+            .attr('x', legendRectSize + legendSpacing)
+            .attr('y', legendRectSize - legendSpacing)
+            .text(function (d) { return d.label; });
+        </script>
+    </body>
+</html>

@@ -47,9 +47,12 @@
                     <h5>약관보기 ></h5>
                 </form>
             </div>
-        </div>
+        </div>  
         <div class="sign">
-            <button class="signBtn">본인인증하기</button>
+            <button class="signBtn" style="margin-left: 115px;">신청사유 선택하기</button>
+        </div>
+            <div id="pwd" style="display: none;">
+            <input type="hidden" id="pwdd" name="pwdd" value="{{pwdd}}">
         </div>
         <div class="house" style="margin-top: 100px; text-align:center;">
             <hr>
@@ -57,6 +60,7 @@
             <span style="font-size: 13px; font-weight:bold;">홈으로</span>
         </div>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
         <script src="{% static 'js/agree.js' %}"></script>
     </body>
 </html>

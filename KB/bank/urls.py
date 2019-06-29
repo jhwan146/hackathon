@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from bank import views
-
+app_name="bank"
 urlpatterns = [
     path('main/', views.main, name='main'),
     path('index/', views.index),
