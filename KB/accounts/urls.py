@@ -12,6 +12,6 @@ urlpatterns = [
     path('success/<int:r_type>', views.success, name='success'),
     path('requestForm/', views.requestForm, name='requestForm'),
     path('agree/', views.agree, name='agree'),
-    path('finish/<str:tx>', views.finish, name='finish'),
+    path('finish/<str:tx>/<str:cut_rate>', views.finish, name='finish'),
     path('KBscan/', views.KBscan, name='KBscan'),
 ]

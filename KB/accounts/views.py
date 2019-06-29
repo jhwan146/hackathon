@@ -59,7 +59,6 @@ def login(request):
         username = request.POST['username']
         password = request.POST['password']
         user = auth.authenticate(request, username=username, password=password)
-        
         if user is not None:
             auth.login(request, user)
             request.session['username'] = user.username
@@ -74,6 +73,7 @@ def evaluation(request):
     return render(request, 'accounts/evaluation.html', {})
 
 def evaluationReject(request):
+    name = request.id
     return render(request, 'accounts/evaluationReject.html', {})
 
 def loading(request):
@@ -101,31 +101,100 @@ def agree(request):
     return render(request, 'accounts/agree.html', {})
 
 def KBscan(request):
-    return render(request, 'accounts/KBscan.html', {})
+    tx_id = bc.objects.all()
 
-def finish(request,tx):
+    block = []
+    for i in tx_id:
+        block_list = []
+        i.tx
+        tx_tx = i.tx.replace('"',"")
+        URL = 'http://192.168.150.58:8001/get_block_data/'+tx_tx
+    
+        response = requests.get(URL)
+        result = response.text
+        block_data = json.loads(result)
+        
+        block_list.append(block_data["number"])
+        #block_list.append(block_data["previous_hash"])
+        block_list.append(block_data["data_hash"])
+        
+        URL = 'http://192.168.150.58:8001/get_block_timestamp/'+tx_tx
+        response = requests.get(URL)
+        result = response.text
+        
+        block_list.append(result)
+        
+        block_list.append(tx_tx)
+
+        URL = 'http://192.168.150.58:8001/get_tx_status/'+tx_tx
+        response = requests.get(URL)
+        result = response.text
+        if result =='OK':
+                result = 'Success'
+        #block_list.append(result)
+        block_list.append(i.org)
+
+        block.append(block_list)
+    
+    block2 = []
+    for i in tx_id:
+        block_list = []
+        i.tx
+        tx_tx = i.tx.replace('"',"")
+        URL = 'http://192.168.150.58:8001/get_block_data/'+tx_tx
+    
+        response = requests.get(URL)
+        result = response.text
+        block_data = json.loads(result)
+        
+        block_list.append(block_data["number"])
+        block_list.append(block_data["previous_hash"])
+        block_list.append(block_data["data_hash"])
+        
+        URL = 'http://192.168.150.58:8001/get_block_timestamp/'+tx_tx
+        response = requests.get(URL)
+        result = response.text
+        
+        block_list.append(result)
+        
+        block_list.append(tx_tx)
+
+        URL = 'http://192.168.150.58:8001/get_tx_status/'+tx_tx
+        response = requests.get(URL)
+        result = response.text
+        if result =='OK':
+                result = 'Success'
+        block_list.append(result)
+        block_list.append(i.org)
+
+        block2.append(block_list)
+        
+    return render(request, 'accounts/KBscan.html', {'block':block,'block2':block2})
+
+def finish(request,tx,cut_rate):
     user_name = request.user
     customer = Member.objects.get(customer_id = user_name)
     print(tx)
     tx = '"' + tx + '"'
+
     f_bc = bc.objects.get(name=user_name, tx = str(tx) )
     bc_get_conf(f_bc.key)
-    return render(request, 'accounts/finish.html', {})
+
+    return render(request, 'accounts/finish.html', {'cut_rate':cut_rate})
 
 def success(request,r_type):
     user_name = request.user
-    print(user_name)
+    print(user_name)    
     print(r_type)
     customer = Member.objects.get(customer_id = user_name)
     customer.reason = r_type
     
     Member.objects.filter(customer_id = user_name).update(reason=r_type)
     user_name = request.user
-    #변경
+
     tx = bc_set_demand(customer.customer_id,customer.name,customer.int_rate,str(r_type))
     bc_set_bank(customer.customer_id,customer.income,customer.job,customer.position)
     bc_set_corf(customer.customer_id,'2','2','2',str(r_type))
-    
 
     get_key = bc.objects.get(name=user_name ,tx = tx )
     URL = 'http://192.168.150.58:8001/get_demand/'+get_key.key

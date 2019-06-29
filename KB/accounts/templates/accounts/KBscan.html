@@ -7,100 +7,120 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="{% static 'css/KBscan.css' %}">
-        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500&display=swap" rel="stylesheet">        
-        <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
         <title>StarBank BlockScan</title>
-        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Gothic+A1:300,400,500,600,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+        <style>
+        div p {
+             overflow: hidden; 
+             text-overflow: ellipsis;
+             white-space: nowrap; 
+             width: 100px;
+             height: 20px;
+        }
+        </style>
     </head>
     <body>
-        <div class="topBanner">
-        </div>
-        <div class="topBanner2">
-            <div class="topB2_inner">
-                <div class="topB2_inner2">
-                    <h2>KB_STAR SCAN</h2>
-                    <h5>ToyStory4 Fresh Sandwich</h5>
-                </div>
+        <div class="Top" style="height: 400px;">
+            <div class="Top2">
+                <h1>KB BlockChain Scan.</h1>
+                <h3>KB_STAR</h3>
             </div>
         </div>
         <div class="row-card">
             <div class="col-card1">
                 <div class="card-height">
-                    <hr>
-                    <div style="padding: 15px;">
-                        <img src="{% static 'images/api.png' %}" style="width: 50px; float: left;" alt="">
-                        <div class="card-body">기관별 API 요청 건수.</div>
+                    <div style="padding: 17px;">
+                        <div class="card-body" style="float: left; font-weight: bolder;">BlockChain<br>INFO.</div>
+                        <img src="../../static/images/transaction.png" style="width: 75px;" alt="">
+                        <span>블록갯수</span>
+                        <img src="../../static/images/differentiation.png" style="width: 75px;" alt="">
+                        <span>신청건수</span>
                     </div>
                 </div>
             </div>
             <div class="col-card1_1">
                 <div class="card-height">
-                    <div class="card-body">
+                    <div>
+                        <div class="card-body" style="float: left; font-weight: bolder; margin-top: 20px; margin-left: 10px;">금리인하<br>신청사유.</div>
+                        <svg class="chart" style="position:absolute; top:52%; right:11%;"></svg>
+                    </div>
+                </div>
+            </div>
+        </div>    
+            <img src="{% static 'images/research.png' %}" onclick="document.getElementById('id01').style.display='block'"
+            class="block-btn" style="position:absolute; top:20%; width: 70px; top:52%; left: 87%;" alt="">
+        <div>
+            <div>
+                <div class="row-card3">
+                        <table class="col-head">
+                            <tr>
+                                <td>Number</td>
+                                <td>Hash</td>
+                                <td>time</td>
+                                <td>Organization</td>
+                                <td>Details</td>
+                            </tr>
+                        </table>
                         <hr>
-                        <svg class="chart"></svg>
+                    <div class="col-table1">
+                        <table class="col-head">
+                            {% for i in block %}
+                            <tr>
+                            {% for j in i %}
+                                <td>{{j}}</td>
+                                
+                                {% endfor %}
+                            <td><a href='../block/{{forloop.counter}}'></a></td>
+                            </tr>
+                            {% endfor%}
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row-card2">
-            <div class="col-card2">
-                    <img src="{% static 'images/hospital.png' %}" style="float: left; padding: 3px; margin-left: 10px; width:37px;" alt=""> 
-                    <div style="float: left; padding: 11px;">건강보험공단</div>
+        {% for i2 in block2%}
+        <div class="container">
+            <div class="modal fade" id="{{forloop.counter}}" role="dialog">
+                <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h4 class="modal-title">Block Info.</h4>
+                    <img src="{% static 'images/Down.gif' %}" style="height: 35px;" salt="">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body" style="font-family: sans-serif; height: 120px; width: 90%;margin: auto; text-align: center;"">
+                    <hr>
+                        <table style=" width: 100%; height: 30%; box-shadow: 0 0.5rem 1.2rem rgba(189,197,209,.2); background: #f2e8e833;">
+                            {% for j2 in i2 %}
+                            <tr>
+                                <td style="border-right: 1px solid skyblue;">{{j2}}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                
+                </div>
             </div>
-            <div class="col-card2_1">
-                    <img src="{% static 'images/city.png' %}" style="float: left; padding: 3px; margin-left: 10px; width:37px;" alt=""> 
-                    <div style="float: left; padding: 11px;">정부24</div>
-            </div>
+            
         </div>
-        <div class="row-card3">
-            <div class="col-table1" style="float:left;">
-                <table class="col-card3">
-                    <tr>
-                        <td><img src="{% static 'images/block.png' %}" style="width:45px;" alt=""></td>
-                        <td>BlockNumber</td>
-                        <td>Hash</td>
-                        <td></td>
-                        <td>time</td>
-                    </tr>
-                </table>
-                <table class="col-card3">
-                    <tr>
-                        <td><img src="{% static 'images/folder.png' %}" style="width:45px;" alt=""></td>
-                        <td>BlockNumber</td>
-                        <td>Hash</td>
-                        <td></td>
-                        <td>time</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="col-table2" style="float:right;">
-                <table  class="col-card3">
-                    <tr>
-                        <td><img src="{% static 'images/block.png' %}" style="width:45px;" alt=""></td>
-                        <td>BlockNumber</td>
-                        <td>Hash</td>
-                        <td></td>
-                        <td>time</td>
-                    </tr>
-                </table>
-                <table  class="col-card3">
-                    <tr>
-                        <td><img src="{% static 'images/folder.png' %}" style="width:45px;" alt=""></td>
-                        <td>BlockNumber</td>
-                        <td>Hash</td>
-                        <td></td>
-                        <td>time</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        
+        {% endfor %}
         <script src="http://d3js.org/d3.v3.min.js"></script>
         <script>
         var data = {
             labels: [
-                '신청사유'
+                '.'
             ],
             series: [
                 {
@@ -117,7 +137,7 @@
                 },]
             };
 
-        var chartWidth       = 230,
+        var chartWidth       = 300,
             barHeight        = 20,
             groupHeight      = barHeight * data.series.length,
             gapBetweenGroups = 10,
@@ -223,4 +243,8 @@
             .text(function (d) { return d.label; });
         </script>
     </body>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </html>
